@@ -1,0 +1,75 @@
+
+.cardBackground{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 10% auto;
+    grid-template-areas: 
+        ". backgroundImage"
+        " card card";
+}
+
+.cardBackground .backgroundIcon{
+    grid-area: backgroundImage;
+    position: absolute;
+    justify-self: end;
+    
+}
+.cardBackground .card{   
+    margin-top: 15%;
+    border-radius: 10px;
+    background-color:hsl(235, 46%, 20%);
+    position: relative;
+    grid-area: card;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+   
+    grid-template-areas: 
+        "text icon"
+        "hours hours"
+        "calendar calendar"; 
+    
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.cardBackground .card:hover{
+    background-color: hsl(235, 45%, 61%);
+}
+
+
+.cardBackground .card .titleLabel{
+    grid-area: text;
+    justify-self: center;
+    color: white;
+    font-family: Rubik;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: lighter;
+}
+
+.cardBackground .card .moreIcon{
+
+    grid-area: icon;
+    justify-self: right;
+    margin-right: 16%;
+    align-self: center;
+}
+
+@media (max-width: 1024px) {
+   
+    .cardBackground .card .moreIcon {
+        justify-self: right;
+        margin-right: 16%;
+        align-self: center;
+    }
+
+    .cardBackground .card .titleLabel {
+        justify-self: start;
+        margin-left: 18%;
+  }
+}
