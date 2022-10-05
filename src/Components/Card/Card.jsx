@@ -15,7 +15,7 @@ export const Card = ({cardType}) => {
        
     const backgroundArry = [ workBackground, playBackground, studyBackground, exerciseBackground, socialBackground, selfCareBackground];
 
-    const { selectedBackground, selectedColor, className } = getCardStyle({cardType, backgroundArry});
+    const { selectedBackground, selectedColor, className, cardTitle } = getCardStyle({cardType, backgroundArry});
 
   return (
     <>
@@ -23,10 +23,10 @@ export const Card = ({cardType}) => {
         <div className={ className } style = {{backgroundColor: selectedColor}} >
             <img className='backgroundIcon' src={selectedBackground} alt="background" />
             <div className="card">
-                <h2 className='titleLabel'> { cardType } </h2>
+                <h2 className='titleLabel'> { cardTitle } </h2>
                 <img className='moreIcon' src={puntos} alt="puntos" />
-                <h2 className='hoursLabel'></h2>
-                <h3 className='calendarLabel'></h3>
+                <h2 className='hoursLabel'>5hrs</h2>
+                <h3 className='calendarLabel'>Last Week - 5hrs</h3>
             </div>
         </div>
        

@@ -25,7 +25,7 @@
     grid-area: card;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
    
     grid-template-areas: 
         "text icon"
@@ -44,10 +44,11 @@
 
 .cardBackground .card .titleLabel{
     grid-area: text;
-    justify-self: center;
+    justify-self: left;
+    margin-left: 18%;
     color: white;
     font-family: Rubik;
-    font-size: 18px;
+    font-size: 16px;
     text-transform: capitalize;
     font-weight: lighter;
 }
@@ -60,7 +61,46 @@
     align-self: center;
 }
 
-@media (max-width: 1024px) {
+.cardBackground .card .hoursLabel{
+    grid-area: hours;
+
+    justify-self: left;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10%;
+
+    color: white;
+    font-family: Rubik;
+    font-weight: lighter;
+    font-size: 50px;
+}
+
+.cardBackground .card .calendarLabel{
+    grid-area: calendar;
+
+    justify-self: left;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-left: 10%;
+
+    color: hsl(236, 100%, 87%);
+    font-family: Rubik;
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+
+/* Responsive media */
+
+@media ( max-width: 426px ) {
+
+    .cardBackground .card{  
+
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        "text icon"
+        "hours calendar"; 
+    }
    
     .cardBackground .card .moreIcon {
         justify-self: right;
@@ -71,5 +111,49 @@
     .cardBackground .card .titleLabel {
         justify-self: start;
         margin-left: 18%;
-  }
+    }
+
+    .cardBackground .card .hoursLabel{
+        margin-bottom: 20px;
+        margin-left: 16%;
+        margin-top: 0;
+        font-size: 30px;
+    }
+
+    .cardBackground .card .calendarLabel{
+        justify-self: right;
+        margin-right: 16%;
+        font-size: 10px;
+        margin-top: 25%;
+    }
+
+    .cardBackground .card {
+        margin-top: 10%;
+    }
+}
+
+@media ( min-width: 426px ) and ( max-width: 1024px ) {
+   
+    .cardBackground .card{  
+
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        "text icon"
+        "hours calendar"; 
+    }
+
+    .cardBackground .card {
+        margin-top: 7%;
+    }
+
+    .cardBackground .card .hoursLabel{
+        margin-bottom: 50px;
+        margin-left: 16%;
+    }
+
+    .cardBackground .card .calendarLabel{
+        justify-self: right;
+        margin-right: 16%;
+        font-size: 16px;
+    }
 }

@@ -1,4 +1,6 @@
 
+import data from '../data.json';
+
  export const getCardStyle = ({cardType, backgroundArry}) => {
 
     const workColor = "hsl(15, 100%, 70%)";
@@ -12,22 +14,24 @@
 
     const typeCardArry= ["work", "play", "study", "exercise", "social", "selfCare"];
     
-    let backgroundPosition = 0;
+    let selectedCardPosition = 0;
     let selectedBackground = null;
     let selectedColor = workColor;
+    let cardTitle = "work";
 
     const className = cardType + "Card"  + " cardBackground"; 
 
     typeCardArry.find( (element,index) =>{ 
         if ( element == cardType){
-            backgroundPosition = index;
+            selectedCardPosition = index;
         }
     });
 
-    selectedBackground = backgroundArry[ backgroundPosition ];
-    selectedColor = backgroundColorArry[ backgroundPosition ];
-
-    return { selectedBackground, selectedColor, className };
+    selectedBackground = backgroundArry[ selectedCardPosition ];
+    selectedColor = backgroundColorArry[ selectedCardPosition ];
+    cardTitle = data[ selectedCardPosition ].title;
+    
+    return { selectedBackground, selectedColor, className, cardTitle};
 
 
 
