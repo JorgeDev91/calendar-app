@@ -134,7 +134,7 @@
 
 /***************************** Tablet **********************************/
 
-@media ( min-width: 426px) and (max-width: 1024px) {
+@media ( min-width: 426px) and (max-width: 768px) {
 
     .menuContainer .menuBar{
         display: flex;
@@ -229,7 +229,7 @@
     .menuContainer .profileCard .nameLabel{
         grid-area: nameSection;
         justify-self: left;
-        font-size: 20px;
+        font-size: 35px;
         
     }
 }
