@@ -19,12 +19,13 @@ import data from '../data.json';
     let selectedColor = workColor;
     let cardTitle = "work";
 
-    const className = cardType + "Card"  + " cardBackground"; 
+    const className = ` ${cardType}Card cardBackground`; 
 
     typeCardArry.find( (element,index) =>{ 
-        if ( element == cardType){
+        if ( element === cardType){
             selectedCardPosition = index;
         }
+        return selectedCardPosition;
     });
 
     selectedBackground = backgroundArry[ selectedCardPosition ];

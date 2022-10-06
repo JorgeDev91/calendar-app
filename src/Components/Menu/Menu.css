@@ -1,0 +1,235 @@
+.menuContainer{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+    background-color: hsl(235, 46%, 20%);
+
+    display: grid;
+    grid-template-rows: auto 30%;
+    grid-template-areas: 
+        " AvatarCard"
+        " MenuCard";
+}
+
+.menuContainer .profileCard{
+    grid-area: AvatarCard;
+    border-radius: 10px;
+    background-color: hsl(246, 80%, 60%);
+}
+
+.menuContainer .profileCard .borderImg{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;  
+    border: 5px solid white;
+    overflow: hidden;
+    position: relative;
+    margin-top: 13%;
+    margin-left: 13%;
+
+}
+
+.menuContainer .profileCard .borderImg .profileImg{
+    max-width: 102px;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+}
+
+.menuContainer .profileCard .report{
+    font-family: Rubik;
+    font-size: 12px;
+    font-weight: lighter;
+    color: hsl(236, 100%, 87%);
+    margin-left: 13%;
+    margin-top: 10%;
+}
+
+.menuContainer .profileCard .nameLabel{
+    font-family: Rubik;
+    font-size: 40px;
+    font-weight: lighter;
+    color: white;
+    margin-left: 13%;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.menuContainer .menuBar{
+    list-style-type: none;
+    color: hsl(235, 45%, 61%);
+}
+
+.menuContainer .menuBar li{
+    margin-top: 2%;
+    margin-bottom: 6%;
+    transition: 0.3s;
+}
+
+.menuContainer .menuBar li:hover{
+    color: white;
+    cursor: pointer;
+}
+
+/************************* MEDIA QUERIES *******************************/
+
+@media ( max-width: 426px ) {
+
+    .menuContainer .menuBar{
+        display: flex;
+        justify-content: space-between;
+        margin-right: 12%;
+    }
+    
+    .menuContainer .profileCard{
+        display: grid;
+        width: 100%;
+
+        grid-template-columns: 40% auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "avatarSection reportSection"
+            "avatarSection nameSection";
+    }
+
+    .menuContainer .profileCard .borderImg{
+        width: 83px;
+        height: 83px;
+        border-radius: 50%;  
+        border: 5px solid white;
+        overflow: hidden;
+        position: relative;
+        margin-top: 13%;
+        margin-left: 13%;
+    
+    }
+    
+    .menuContainer .profileCard .borderImg{
+        grid-area: avatarSection;
+        justify-self: center;
+        
+    }
+    .menuContainer .profileCard .borderImg .profileImg{
+        max-width: 83px;
+        position: absolute;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .menuContainer .profileCard .report{
+        grid-area: reportSection;
+        justify-self: left;
+        align-self: flex-end;
+        font-size: 10px;
+        margin-bottom: 0px;
+    }
+
+    .menuContainer .profileCard .nameLabel{
+        grid-area: nameSection;
+        justify-self: left;
+        font-size: 15px;
+    }
+}
+
+/***************************** Tablet **********************************/
+
+@media ( min-width: 426px) and (max-width: 1024px) {
+
+    .menuContainer .menuBar{
+        display: flex;
+        justify-content: space-between;
+        margin-right: 12%;
+    }
+    
+    .menuContainer .profileCard{
+        display: grid;
+        width: 100%;
+
+        grid-template-columns: 40% auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "avatarSection reportSection"
+            "avatarSection nameSection";
+    }
+
+    .menuContainer .profileCard .borderImg{
+        width: 83px;
+        height: 83px;
+        border-radius: 50%;  
+        border: 5px solid white;
+        overflow: hidden;
+        position: relative;
+        margin-top: 13%;
+        margin-left: 13%;
+    
+    }
+    
+    .menuContainer .profileCard .borderImg{
+        grid-area: avatarSection;
+        justify-self: center;
+        
+    }
+    .menuContainer .profileCard .borderImg .profileImg{
+        max-width: 83px;
+        position: absolute;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .menuContainer .profileCard .report{
+        grid-area: reportSection;
+        justify-self: left;
+        align-self: flex-end;
+        font-size: 18px;
+        margin-bottom: 0px;
+    }
+
+    .menuContainer .profileCard .nameLabel{
+        grid-area: nameSection;
+        justify-self: left;
+        font-size: 22px;
+    }
+}
+
+/**************** Semi Desktop ************************/
+
+@media  (min-width: 768px ) and (max-width: 1024px) {
+    .menuContainer .menuBar{
+        display: flex;
+        justify-content: space-between;
+        margin-right: 10%;
+    }
+
+    .menuContainer .profileCard{
+        display: grid;
+        width: 100%;
+
+        grid-template-columns: 40% auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "avatarSection reportSection"
+            "avatarSection nameSection";
+    }
+
+    .menuContainer .profileCard .borderImg{
+        grid-area: avatarSection;
+        justify-self: center;
+        
+    }
+
+    .menuContainer .profileCard .report{
+        grid-area: reportSection;
+        justify-self: left;
+        align-self: flex-end;
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
+
+    .menuContainer .profileCard .nameLabel{
+        grid-area: nameSection;
+        justify-self: left;
+        font-size: 20px;
+        
+    }
+}

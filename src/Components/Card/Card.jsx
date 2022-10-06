@@ -9,13 +9,18 @@ import selfCareBackground from '../../Images/icon-self-care.svg';
 
 import { getCardStyle } from '../../Helpers/getCardStyle';
 import './Card.css';
+import { getCardInfo } from '../../Helpers/getCardInfo';
 
 
-export const Card = ({cardType}) => {
+export const Card = ({cardType, calendarChoosed}) => {
        
+    
     const backgroundArry = [ workBackground, playBackground, studyBackground, exerciseBackground, socialBackground, selfCareBackground];
 
     const { selectedBackground, selectedColor, className, cardTitle } = getCardStyle({cardType, backgroundArry});
+
+    const { currentValue, previousValue} = getCardInfo( {cardTitle, calendarChoosed} );
+    
 
   return (
     <>
@@ -25,8 +30,8 @@ export const Card = ({cardType}) => {
             <div className="card">
                 <h2 className='titleLabel'> { cardTitle } </h2>
                 <img className='moreIcon' src={puntos} alt="puntos" />
-                <h2 className='hoursLabel'>5hrs</h2>
-                <h3 className='calendarLabel'>Last Week - 5hrs</h3>
+                <h2 className='hoursLabel'>{currentValue}hrs</h2>
+                <h3 className='calendarLabel'>Last Week - {previousValue}hrs</h3>
             </div>
         </div>
        

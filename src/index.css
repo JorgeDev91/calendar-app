@@ -29,9 +29,14 @@ code {
   grid-template-rows: repeat(2, 1fr);
   gap: 20px 20px;
   grid-template-areas: 
-      "menu work play study"
-      "menu exercise social selfCare"; 
+      "menuSection work play study"
+      "menuSection exercise social selfCare"; 
    
+}
+
+.gridContainer .menuContainer{
+  grid-area: menuSection;
+  justify-self: stretch;
 }
 
 .gridContainer .workCard{
@@ -69,7 +74,7 @@ code {
     gap: 20px 20px;
     
       grid-template-areas: 
-      "menu"
+      "menuSection"
       "work"
       "play"
       "study"
